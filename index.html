@@ -16,15 +16,13 @@
 </head>
 <body>
   <header class="cabecalho">
-    <div class="logo"><img src="assets/Logo.png" alt="logo investeam"></div>
-    <div class="busca-projetos">
-      <form action="" method="POST">
-        <input type="text">
-        <button name="buscar"><img src="assets/busca.svg" alt="lupa"></button>
-      </form>
-    </div>
+    <img class="logo" src="assets/Logo.png" alt="logo investeam">
+    <form class="busca-projetos" action="" method="POST">
+      <input type="text" name="buscar-projetos" placeholder="Buscar Projetos">
+      <button name="buscar"></button>
+    </form>
     <div class="nav-bar">
-      <img  id="btn-menu" src="" alt="butão de menu">
+      <img  id="btn-menu" src="assets/btn-menu.svg" alt="butão de menu">
       <ul class="barra-menu">
         <li><a href="#">Login/Cadastro</a></li>
         <li><a href="#">Perfil</a></li>
@@ -34,8 +32,39 @@
   </header>
   <main>
     <div class="container">
-      <aside class="top-projetos"></aside>
-      <section class="exibe-projetos"></section>
+      <aside class="area-top-projetos">
+        <h2>Top projetos</h2>
+        <div class="top-projetos">
+        </div>
+      </aside>
+      <section class="exibe-projetos">
+        <div class="projetos">
+          <div class="nome-projeto">Jogo Teste 1</div>
+          <div class="descricao">
+            <ul>
+              <li>Nome: Teste jogo</li>
+              <li>Desenvolvedor: Fulano Tec</li>
+              <li>Status: Não Iniciado</li>
+              <li>Data de criação: 24/08/2021</li>
+              <li>Estrelas: 60</li>
+            </ul>
+            <a href="#"><button>Acessar</button></a>
+          </div>
+        </div>
+        <div class="projetos">
+          <div class="nome-projeto">Jogo Teste 2</div>
+          <div class="descricao">
+            <ul>
+              <li>Nome: Novo jogo</li>
+              <li>Desenvolvedor: Ciclano games</li>
+              <li>Status: Em desenvolvimento</li>
+              <li>Data de criação: 16/05/2021</li>
+              <li>Estrelas: 100</li>
+            </ul>
+            <a href="#"><button>Acessar</button></a>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </body>
