@@ -38,7 +38,7 @@ html {
 .cabecalho .busca-projetos button {
   width: 49px;
   height: 49px;
-  background: var(--bg-secondary) url('../assets/search.svg') no-repeat;
+  background: var(--bg-secondary) url('../assets/images/search.svg') no-repeat;
   background-position: center;
   border-radius: 0 6px 6px 0;
 }
