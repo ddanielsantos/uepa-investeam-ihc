@@ -12,3 +12,170 @@ html {
   --bg-secondary: #8F379D;
   --font-primary: #ffffff;
 }
+
+/* HEADER */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+}
+
+.cabecalho .logo,
+.cabecalho .barra-menu {
+  display: none;  
+}
+
+.cabecalho .busca-projetos {
+  display: flex;
+  align-items: center;
+
+  /* width: 281px; */
+  width: 100%;
+  height: 49px;
+  margin: 18px 24px;
+}
+
+.cabecalho .busca-projetos button {
+  width: 49px;
+  height: 49px;
+  background: var(--bg-secondary) url('../assets/search.svg') no-repeat;
+  background-position: center;
+  border-radius: 0 6px 6px 0;
+}
+
+.cabecalho .busca-projetos input {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 29px;
+  text-align: center;
+}
+
+.cabecalho .logo {
+  width: 90px;
+}
+
+.cabecalho .nav-bar {
+  /* width: min(100%); */
+  margin: 20px 24px;
+}
+
+/* CONTAINER */
+body {
+  background: var(--bg-secondary);
+}
+
+.container {
+  padding: 0 10px;
+}
+
+/* projetos */
+.container .area-top-projetos,
+.container .exibe-projetos {
+  margin: 50px 5px;
+}
+
+.container .area-top-projetos h2 {
+  margin: 10px 0;
+  text-align: center;
+  color: var(--font-primary);
+}
+
+.container .area-top-projetos .top-projetos {
+  height: 154px;
+  border-radius: 9px;
+  background: var(--bg-primary);
+}
+
+/* projetos buscados */
+.container .exibe-projetos {
+  border-radius: 9px;
+  background: var(--bg-primary);
+  padding: .5rem 1rem;
+}
+
+.container .exibe-projetos .projetos {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #fff;
+  /* height: 40px; */
+  margin: .5rem 0;
+}
+
+.container .exibe-projetos .projetos .nome-projeto {
+  /* border: 1px solid #fff; */
+  text-align: center;
+  padding: 10px;
+}
+
+
+.container .exibe-projetos .projetos .descricao {
+  /* border: 1px solid #fff; */
+  width: 100%;
+  padding: 10px;
+}
+
+.container .exibe-projetos .projetos .nome-projeto,
+.container .exibe-projetos .projetos .descricao ul,
+.container .exibe-projetos .projetos .descricao a button {
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--font-primary);
+  font-weight: 400;
+  list-style: none;
+}
+
+.container .exibe-projetos .projetos .descricao a button {
+  width: 100%;
+  padding: 5px;
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.788);
+  background-color: #fff;
+}
+
+@media screen and (min-width: 784px) {
+  .container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+
+  .cabecalho {
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
+  }
+
+  .cabecalho .logo,
+  .cabecalho .barra-menu {
+    display: block;  
+  }
+
+  .cabecalho .nav-bar #btn-menu {
+    display: none;
+  }
+  
+  .cabecalho .nav-bar .barra-menu {
+    border: 1px solid red;
+    margin: 0 40px;
+    list-style: none;
+  }
+  
+  .cabecalho .nav-bar .barra-menu li {
+    display: inline;
+  }
+
+  .cabecalho .nav-bar .barra-menu li a {
+    color: #fff;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .container .exibe-projetos {
+    width: 100%;
+  }
+}
