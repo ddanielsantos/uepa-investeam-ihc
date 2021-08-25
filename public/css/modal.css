@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: 20% 80%;
 
-  position: absolute; 
+  position: fixed; 
   right: 0;
   width: 0;
   height: 100%;
 
   top: 0;
+  bottom: 0;
   overflow-x: hidden;
   transition: .5s;
 }

@@ -20,7 +20,6 @@ html {
   background: var(--bg-primary);
 }
 
-.container .cabecalho .logo,
 .container .cabecalho .barra-menu {
   display: none;  
 }
@@ -32,7 +31,7 @@ html {
   /* width: 281px; */
   width: 100%;
   height: 49px;
-  margin: 18px 24px;
+  margin: 18px 10px;
 }
 
 .container .cabecalho .busca-projetos button {
@@ -149,7 +148,6 @@ main {
     grid-template-columns: 10% 40% 50%;
   }
 
-  .container .cabecalho .logo,
   .container .cabecalho .barra-menu {
     display: block;  
   }
