@@ -14,18 +14,18 @@ html {
 }
 
 /* HEADER */
-.cabecalho {
+.container .cabecalho {
   display: flex;
   align-items: center;
   background: var(--bg-primary);
 }
 
-.cabecalho .logo,
-.cabecalho .barra-menu {
+.container .cabecalho .logo,
+.container .cabecalho .barra-menu {
   display: none;  
 }
 
-.cabecalho .busca-projetos {
+.container .cabecalho .busca-projetos {
   display: flex;
   align-items: center;
 
@@ -35,7 +35,7 @@ html {
   margin: 18px 24px;
 }
 
-.cabecalho .busca-projetos button {
+.container .cabecalho .busca-projetos button {
   width: 49px;
   height: 49px;
   background: var(--bg-secondary) url('../../images/search.svg') no-repeat;
@@ -43,7 +43,7 @@ html {
   border-radius: 0 6px 6px 0;
 }
 
-.cabecalho .busca-projetos input {
+.container .cabecalho .busca-projetos input {
   width: 100%;
   height: 100%;
   border-radius: 6px 0 0 6px;
@@ -55,11 +55,11 @@ html {
   text-align: center;
 }
 
-.cabecalho .logo {
+.container .cabecalho .logo {
   width: 90px;
 }
 
-.cabecalho .nav-bar {
+.container .cabecalho .nav-bar {
   /* width: min(100%); */
   margin: 20px 24px;
 }
@@ -69,7 +69,7 @@ body {
   background: var(--bg-secondary);
 }
 
-.container {
+main {
   padding: 0 10px;
 }
 
@@ -138,43 +138,44 @@ body {
   background-color: #fff;
 }
 
-@media screen and (min-width: 784px) {
-  .container {
+@media screen and (min-width: 869px) {
+  main {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 30% 69%;
   }
 
-  .cabecalho {
+  .container .cabecalho {
     display: grid;
     grid-template-columns: 10% 40% 50%;
   }
 
-  .cabecalho .logo,
-  .cabecalho .barra-menu {
+  .container .cabecalho .logo,
+  .container .cabecalho .barra-menu {
     display: block;  
   }
 
-  .cabecalho .nav-bar #btn-menu {
+  .container .cabecalho .nav-bar #btn-menu {
     display: none;
   }
   
-  .cabecalho .nav-bar .barra-menu {
+  .container .cabecalho .nav-bar .barra-menu {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin: 0 40px;
+    margin: 0 10px;
     list-style: none;
+    width: 100%;
   }
 
-  .cabecalho .nav-bar .barra-menu li a {
+  .container .cabecalho .nav-bar .barra-menu li a {
     color: #fff;
-    margin: 20px;
+    margin: 10px;
     font-size: 25px;
     text-align: center;
   }
 
-  .container .exibe-projetos {
+  .container main .exibe-projetos {
     width: 100%;
   }
 }

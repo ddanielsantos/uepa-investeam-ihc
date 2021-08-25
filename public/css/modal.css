@@ -1,0 +1,54 @@
+.modal {
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+  position: absolute; 
+  right: 0;
+  width: 0;
+  height: 100%;
+
+  top: 0;
+  overflow-x: hidden;
+  transition: .5s;
+}
+
+/* AREA DO BUTÃO */
+.modal .area-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background: var(--bg-secondary);
+}
+
+.modal .area-button img {
+  margin-top: 25px;
+
+  width: 50px;
+}
+
+/* AREA DO MENU */
+.modal .area-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+}
+
+.modal .area-menu .lista-menu {
+  padding: 10px;
+  width: 100%;
+  list-style: none;
+}
+
+.modal .area-menu .lista-menu li {
+  margin: 35px 0;
+  text-align: center;
+}
+
+.modal .area-menu .lista-menu li a {
+  color: #fff;
+  font-size: 41px;
+  font-weight: 700;
+  line-height: 51px;
+}

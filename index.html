@@ -8,6 +8,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="public/css/main.css">
+  <link rel="stylesheet" href="public/css/modal.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,23 +16,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="cabecalho">
-    <img class="logo" src="images/Logo.png" alt="logo investeam">
-    <form class="busca-projetos" action="" method="POST">
-      <input type="text" name="buscar-projetos" placeholder="Buscar Projetos">
-      <button name="buscar"></button>
-    </form>
-    <div class="nav-bar">
-      <img  id="btn-menu" src="images/btn-menu.svg" alt="butão de menu">
-      <ul class="barra-menu">
-        <li><a href="#">Login/Cadastro</a></li>
-        <li><a href="#">Perfil</a></li>
-        <li><a href="#">Sobre</a></li>
-      </ul>
-    </div>
-  </header>
-  <main>
-    <div class="container">
+  <div class="container">
+    <header class="cabecalho">
+      <img class="logo" src="images/Logo.png" alt="logo investeam">
+      <form class="busca-projetos" action="" method="POST">
+        <input type="text" name="buscar-projetos" placeholder="Buscar Projetos">
+        <button name="buscar"></button>
+      </form>
+      <div class="nav-bar">
+        <img  id="btn-menu" src="images/btn-menu.svg" alt="butão de menu">
+        <ul class="barra-menu">
+          <li><a href="#">Login/Cadastro</a></li>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Sobre</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
       <aside class="area-top-projetos">
         <h2>Top projetos</h2>
         <div class="top-projetos">
@@ -65,7 +66,21 @@
           </div>
         </div>
       </section>
+    </main>
+  </div>
+  <div class="modal">
+    <div class="area-button">
+      <img id="btn-close" src="images/btn-close.svg" alt="">
     </div>
-  </main>
+    <div class="area-menu">
+      <ul class="lista-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Login / Cadastro</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Sobre</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="public/scripts/modal.js"></script>
 </body>
 </html>
