@@ -16,7 +16,7 @@ body{
     color: var(--font-primary);
 }
 
-section{
+section:nth-child(2){
     /* height: 1000px; */
     padding: 5em 3em 0em 3em;
     display: flex;
@@ -37,14 +37,19 @@ section > *{
     text-align: left;
 }
 
+.texts > h2:last-child{
+    display: none;
+}
+
 .texts{
     margin-top: 0;
 }
 
 #login-area > form{
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 form > input{
@@ -55,11 +60,21 @@ form > input{
     border-radius: 1em;
     margin-top: 1.5em;
     color: var(--font-primary);
+    font-size: 1em;
+    font-weight: 700;
 }
 
-input[type="submit"]{
-    width: 30%;
+input[type="submit"], input[type="button"]{
+    width: 40%;
+    cursor: pointer;
 }
+
+input[type="button"]{
+    border: none;
+    text-decoration: underline;
+    /* margin-left: auto; */
+}
+
 
 ::placeholder{
     color: var(--font-primary);
@@ -67,4 +82,34 @@ input[type="submit"]{
 
 ::ms-input-placeholder{
     color: var(--font-primary);
+}
+
+@media (min-width: 992px) {
+    body{
+        background-color: var(--bg-primary);
+    }
+
+    main{
+        display: flex;
+    }
+
+    section:first-child{
+        width: 70%;
+        height: 100vh;
+        background-color: var(--bg-secondary);
+    }
+
+    .texts > * {
+        display: none;
+    }
+
+    .texts > h2:last-child{
+        display: block;
+        text-align: center;
+    }
+
+    #login-area{
+        margin-top: 0;
+    }
+
 }
