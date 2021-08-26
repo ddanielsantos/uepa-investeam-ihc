@@ -17,32 +17,37 @@ body{
     color: var(--font-primary);
 }
 
-section:nth-child(2){
+section> *{
     /* height: 1000px; */
     padding: 5em 3em 0em 3em;
     display: flex;
     flex-direction: column;
 }
 
-section > *{
-    margin-top: 3em;
+section:first-child{
+    padding-top: 3em;
 }
 
-.texts > h1{
-    font-size: 5em;
+section > div.texts {
+    display: none;
+}
+
+.texts-mobile > h1, .texts > h1{
+    font-size: 4em;
     text-decoration: underline;
+    /* margin-right: 30%; */
 }
 
-.texts > h2 {
+.texts-mobile > h2, .texts > h2 {
     font-size: 2.5em;
-    text-align: center;
+    text-align: left;
 }
 
-.texts > h2:last-child{
-    display: block;
-}
+/* .texts-mobile > h2:last-child{
+    display: none;
+} */
 
-.texts{
+.texts-mobile{
     margin-top: 0;
 }
 
@@ -98,6 +103,7 @@ input[type="submit"]:hover, input[type="button"]:hover{
 
     main{
         display: flex;
+        flex-direction: row-reverse;
     }
 
     section:first-child{
@@ -106,20 +112,18 @@ input[type="submit"]:hover, input[type="button"]:hover{
         background-color: var(--bg-secondary);
     }
 
-    .texts > * {
-        /* display: inline; */
-        /* margin-top: 0; */
-        margin: auto;
-        width: 80%;
-        margin-top: 20%;
-        padding: 10px;
+    section > div.texts {
+        display: block;
     }
 
-    .texts > h2:last-child{
+    .texts-mobile > * {
+        display: none;
+    }
+
+    /* .texts-mobile > h2:last-child{
         display: block;
         text-align: center;
-        margin-top: 0;
-    }
+    } */
 
     #login-area{
         margin-top: 0;
