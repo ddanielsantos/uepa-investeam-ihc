@@ -1,8 +1,5 @@
 # investeam-ihc
-mudar descrição depois
+Projeto de software da disciplina de interface humano computador voltado para
+encontrar investidores em projetos de desenvolvimento de games
 
-Testando meus compatriotas
-Teste 02
-Teste 03
-
-salveee
+Link do github pages: https://ddanielsantos.github.io/investeam-ihc/

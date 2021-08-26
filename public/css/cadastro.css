@@ -17,36 +17,32 @@ body{
     color: var(--font-primary);
 }
 
-section> *{
+section:nth-child(2){
     /* height: 1000px; */
     padding: 5em 3em 0em 3em;
     display: flex;
     flex-direction: column;
 }
 
-section:first-child{
-    padding-top: 3em;
+section > *{
+    margin-top: 3em;
 }
 
-section > div.texts {
-    display: none;
-}
-
-.texts-mobile > h1, .texts > h1{
+.texts > h1{
     font-size: 5em;
     text-decoration: underline;
 }
 
-.texts-mobile > h2, .texts > h2 {
+.texts > h2 {
     font-size: 2.5em;
-    text-align: left;
+    text-align: center;
 }
 
-/* .texts-mobile > h2:last-child{
-    display: none;
-} */
+.texts > h2:last-child{
+    display: block;
+}
 
-.texts-mobile{
+.texts{
     margin-top: 0;
 }
 
@@ -102,7 +98,6 @@ input[type="submit"]:hover, input[type="button"]:hover{
 
     main{
         display: flex;
-        flex-direction: row-reverse;
     }
 
     section:first-child{
@@ -111,18 +106,20 @@ input[type="submit"]:hover, input[type="button"]:hover{
         background-color: var(--bg-secondary);
     }
 
-    section > div.texts {
-        display: block;
+    .texts > * {
+        /* display: inline; */
+        /* margin-top: 0; */
+        margin: auto;
+        width: 80%;
+        margin-top: 20%;
+        padding: 10px;
     }
 
-    .texts-mobile > * {
-        display: none;
-    }
-
-    /* .texts-mobile > h2:last-child{
+    .texts > h2:last-child{
         display: block;
         text-align: center;
-    } */
+        margin-top: 0;
+    }
 
     #login-area{
         margin-top: 0;

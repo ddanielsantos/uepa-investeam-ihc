@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: 20% 80%;
 
-  position: absolute; 
+  position: fixed; 
   right: 0;
   width: 0;
   height: 100%;
 
   top: 0;
+  bottom: 0;
   overflow-x: hidden;
   transition: .5s;
 }
@@ -46,9 +47,17 @@
   text-align: center;
 }
 
-.modal .area-menu .lista-menu li a {
+.modal .area-menu .lista-menu li {
   color: #fff;
-  font-size: 41px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 51px;
+}
+
+.modal .area-menu .lista-menu li:hover { 
+  border: var(--font-primary) 3px solid;
+  border-radius: 1rem;
+  background: var(--font-primary);
+  color: var(--bg-primary);
+  font-weight: 700;
 }
