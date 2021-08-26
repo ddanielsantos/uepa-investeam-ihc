@@ -12,6 +12,11 @@
     --font-primary: #ffffff;
 }
 
+::selection{
+    background-color: var(--font-primary);
+    color: var(--bg-primary);
+}
+
 body{
     background-color: var(--bg-secondary);
     color: var(--font-primary);
@@ -57,7 +62,7 @@ section > div.texts {
     flex-wrap: wrap;
 }
 
-form > input{
+form > input, a{
     width: 100%;
     padding: 1em;
     background-color: #00000000;
@@ -69,21 +74,29 @@ form > input{
     font-weight: 700;
 }
 
-input[type="submit"], input[type="button"]{
+input[type="submit"], a{
     width: 40%;
+    text-align: center;
     cursor: pointer;
 }
 
-input[type="button"]{
+a{
     border: none;
     text-decoration: underline;
     /* margin-left: auto; */
 }
 
-input[type="submit"]:hover, input[type="button"]:hover{
-    text-decoration: none;
+input[type="submit"]:hover, a:hover{
     background-color: var(--font-primary);
     color: var(--bg-primary);
+}
+
+a {
+    color: var(--font-primary);
+}
+
+input[type="submit"]:hover{
+    text-decoration: none;
 }
 
 ::placeholder{
