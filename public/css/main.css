@@ -18,6 +18,7 @@ html {
   display: flex;
   align-items: center;
   background: var(--bg-primary);
+  padding: 0 1rem;
 }
 
 .container .cabecalho .barra-menu {
@@ -40,6 +41,7 @@ html {
   background: var(--bg-secondary) url('../../images/search.svg') no-repeat;
   background-position: center;
   border-radius: 0 6px 6px 0;
+  cursor: pointer;
 }
 
 .container .cabecalho .busca-projetos input {
@@ -52,15 +54,26 @@ html {
   font-weight: 700;
   line-height: 29px;
   text-align: center;
+  color: rgba(0, 0, 0, 0.61);
 }
 
 .container .cabecalho .logo {
-  width: 90px;
+  width: 80px;
 }
 
-.container .cabecalho .nav-bar {
-  /* width: min(100%); */
-  margin: 20px 24px;
+.container .cabecalho .nav-bar li { 
+  padding: .5rem;
+  margin: .3rem;
+  border: var(--font-primary) 3px solid;
+  border-radius: 1rem;
+  color: var(--font-primary);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.container .cabecalho .nav-bar li:hover {
+  background: var(--font-primary);
+  color: var(--bg-primary);
 }
 
 /* CONTAINER */
@@ -94,27 +107,26 @@ main {
 .container .exibe-projetos {
   border-radius: 9px;
   background: var(--bg-primary);
-  padding: .5rem 1rem;
+  padding: .3rem 1rem;
 }
 
 .container .exibe-projetos .projetos {
   display: flex;
   align-items: center;
 
-  border: 1px solid #fff;
-  /* height: 40px; */
+  border: 2px solid #fff;
+  border-radius: .5rem 0 .5rem 0;
   margin: .5rem 0;
+  padding: .5rem;
 }
 
 .container .exibe-projetos .projetos .nome-projeto {
-  /* border: 1px solid #fff; */
   text-align: center;
   padding: 10px;
 }
 
 
 .container .exibe-projetos .projetos .descricao {
-  /* border: 1px solid #fff; */
   width: 100%;
   padding: 10px;
 }
@@ -133,8 +145,14 @@ main {
   width: 100%;
   padding: 5px;
   border-radius: 6px;
-  color: rgba(0, 0, 0, 0.788);
+  color: var(--bg-primary);
   background-color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.container .exibe-projetos .projetos .descricao a button:hover {
+  background-color: rgba(255, 255, 255, 0.795);
 }
 
 @media screen and (min-width: 869px) {

@@ -47,9 +47,17 @@
   text-align: center;
 }
 
-.modal .area-menu .lista-menu li a {
+.modal .area-menu .lista-menu li {
   color: #fff;
-  font-size: 41px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 51px;
+}
+
+.modal .area-menu .lista-menu li:hover { 
+  border: var(--font-primary) 3px solid;
+  border-radius: 1rem;
+  background: var(--font-primary);
+  color: var(--bg-primary);
+  font-weight: 700;
 }
