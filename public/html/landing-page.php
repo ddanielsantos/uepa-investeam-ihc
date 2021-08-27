@@ -31,11 +31,11 @@
             </div>
 
             <div id="login-area">
-                <form action="#">
+                <form action="../../php/crud-usuarios.php" method="POST">
                     <input type="text" name="username" id="username" placeholder="Insira o seu username">
                     <input type="password" name="password" id="password" placeholder="Insira a sua senha">
                     <a href="cadastro.php">Cadastrar-se</a>
-                    <input type="submit" value="Login">
+                    <input type="submit" name="login" value="Login">
                 </form>
             </div>
         </section>
