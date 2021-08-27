@@ -24,7 +24,7 @@ body{
 
 section> *{
     /* height: 1000px; */
-    padding: 5em 3em 0em 3em;
+    padding: 1em 3em 0em 3em;
     display: flex;
     flex-direction: column;
 }
@@ -38,13 +38,13 @@ section > div.texts {
 }
 
 .texts-mobile > h1, .texts > h1{
-    font-size: 4em;
+    font-size: 3em;
     text-decoration: underline;
     /* margin-right: 30%; */
 }
 
 .texts-mobile > h2, .texts > h2 {
-    font-size: 2.5em;
+    font-size: 1.3em;
     text-align: left;
 }
 
@@ -75,7 +75,7 @@ form > input, a{
     font-weight: 700;
 }
 
-input[type="submit"], a{
+input[type="button"], a{
     width: 40%;
     cursor: pointer;
 }
@@ -127,16 +127,13 @@ input[type="submit"]:hover{
 
     section > div.texts {
         display: block;
+        height: 100%;
+        padding-top: 200px;
     }
 
     .texts-mobile > * {
         display: none;
     }
-
-    /* .texts-mobile > h2:last-child{
-        display: block;
-        text-align: center;
-    } */
 
     #login-area{
         margin-top: 0;
