@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InveSteam - Landing page</title>
-    <link rel="stylesheet" href="/public/css/landing.css">
+    <link rel="stylesheet" href="../css/landing.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
                 <form action="#">
                     <input type="text" name="username" id="username" placeholder="Insira o seu username">
                     <input type="password" name="password" id="password" placeholder="Insira a sua senha">
-                    <a href="cadastro.html">Cadastrar-se</a>
+                    <a href="cadastro.php">Cadastrar-se</a>
                     <input type="submit" value="Login">
                 </form>
             </div>

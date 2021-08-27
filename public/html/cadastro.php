@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InveSteam - Cadastre-se</title>
-    <link rel="stylesheet" href="/public/css/cadastro.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
     <!-- <link rel="stylesheet" href="/public/css/landing.css"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
                     <input type="text" name="email" id="email" placeholder="Insira o seu email">
                     <input type="password" name="password" id="password" placeholder="Digite sua senha">                    
                     <input type="submit" value="Cadastrar">
-                    <input type="button" value="Login" onclick="location.href='landing-page.html'">
+                    <input type="button" value="Login" onclick="location.href='landing-page.php'">
                 </form>
             </div>
         </section>
