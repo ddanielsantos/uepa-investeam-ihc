@@ -17,10 +17,10 @@
     color: var(--bg-primary);
 }
 
-body{
+/* body{
     background-color: var(--bg-secondary);
     color: var(--font-primary);
-}
+} */
 
 section> *{
     /* height: 1000px; */
@@ -118,11 +118,13 @@ input[type="submit"]:hover{
         flex-direction: row-reverse;
     }
 
-    section:first-child{
+    main > section:nth-of-type(1){
+        background-color: var(--bg-secondary);
+        color: white;
         width: 70%;
         height: 100vh;
-        background-color: var(--bg-secondary);
     }
+
 
     section > div.texts {
         display: block;
