@@ -5,6 +5,7 @@ $user = "root";
 $psw = "";
 
 try {
+  # estabelecendo a conexão com o banco de dados
   $conexao = new PDO($server,$user,$psw);
 
   # Tabela de usuários
@@ -15,6 +16,7 @@ try {
       username VARCHAR(15) NOT NULL,
       senha VARCHAR(32) NOT NULL,
       email VARCHAR(50) NOT NULL,
+      tipo VARCHAR(15) NOT NULL,
       telefone VARCHAR(15),
       status BOOLEAN,
       rg VARCHAR(7),
