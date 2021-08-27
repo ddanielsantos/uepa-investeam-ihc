@@ -107,6 +107,26 @@ input[type="submit"]:hover{
     color: var(--font-primary);
 }
 
+/* ESTILIZAÇÃO DAS MENSAGENS */
+.msg-box {
+    height: 3rem;
+}
+
+.msg-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 2.8rem;
+    background-color: rgb(255, 255, 255);
+    color: #e73838f6;
+    border-radius: 1rem;
+
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
 @media (min-width: 992px) {
     body{
         transition: .6s;

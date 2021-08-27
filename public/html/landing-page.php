@@ -1,3 +1,6 @@
+<?php
+    require('../../php/crud-usuarios.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-Br">
 
@@ -31,6 +34,18 @@
             </div>
 
             <div id="login-area">
+                <div class="msg-box">
+                    <?php if (isset($_SESSION['loginerr'])) { ?>
+                        <div class="msg-error">
+                            <?php 
+                                # exibe a mensagem da sessão
+                                echo $_SESSION['loginerr'];
+                                # deleta a sessão
+                                unset($_SESSION['loginerr']);
+                            ?>
+                        </div>
+                    <?php } ?>
+                </div>
                 <form action="../../php/crud-usuarios.php" method="POST">
                     <input type="text" name="username" id="username" placeholder="Insira o seu username">
                     <input type="password" name="password" id="password" placeholder="Insira a sua senha">

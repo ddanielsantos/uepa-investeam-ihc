@@ -9,8 +9,8 @@ try {
 
   # READ -> Login de usuário na plataforma
   if (isset($_POST['login'])) {
-    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
     
     # valida se os campos estão vazios
     if (($username) && ($password)) {
@@ -35,7 +35,10 @@ try {
 
     } else {
       # grava uma sessão de erro
-      $_SESSION['erro-login'] = "Preencha todos os campos corretamente";
+      $_SESSION['loginerr'] = "Preencha todos os campos corretamente";
+
+      # redireciona para página de login
+      header('location: ../public/html/landing-page.php');
     }
   }
 } catch (PDOException $e) {

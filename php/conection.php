@@ -18,7 +18,7 @@ try {
       email VARCHAR(50) NOT NULL,
       tipo VARCHAR(15) NOT NULL,
       telefone VARCHAR(15),
-      status BOOLEAN,
+      status VARCHAR(9) NOT NULL,
       rg VARCHAR(7),
       cpf VARCHAR(14),
       cnpj VARCHAR(50),
