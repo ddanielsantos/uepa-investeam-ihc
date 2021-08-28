@@ -1,3 +1,4 @@
+<?php require('../../php/crud-usuarios.php') ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InveSteam - Cadastre-se</title>
-    <link rel="stylesheet" href="../css/cadastro.css">
-    <!-- <link rel="stylesheet" href="/public/css/landing.css"> -->
+    <link rel="stylesheet" href="../css/cad-login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +27,52 @@
             </div>
 
             <div id="login-area">
-                <form action="#">
-                    <input type="text" name="username" id="username" placeholder="Insira o seu Nome">
-                    <input type="text" name="email" id="email" placeholder="Insira o seu email">
+
+                <div class="msg-box">
+                    <?php if (isset($_SESSION['loginerr'])) { ?>
+                        <div class="msg-error">
+                            <?php 
+                                # exibe a mensagem da sessão
+                                echo $_SESSION['loginerr'];
+                                # deleta a sessão
+                                unset($_SESSION['loginerr']);
+                            ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if (isset($_SESSION['loginok'])) { ?>
+                        <div class="msg-ok">
+                            <?php 
+                                # exibe a mensagem da sessão
+                                echo $_SESSION['loginok'];
+                                # deleta a sessão
+                                unset($_SESSION['loginok']);
+                            ?>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <form action="../../php/crud-usuarios.php" method="POST">
+                    <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
+                    <input type="text" name="username" id="username" placeholder="Digite seu usuário">
                     <input type="password" name="password" id="password" placeholder="Digite sua senha">                    
-                    <input type="submit" value="Cadastrar">
-                    <input type="button" value="Login" onclick="location.href='landing-page.php'">
+                    <input type="password" name="password-repeat" id="password" placeholder="Digite sua senha novamente">                    
+                    <input type="email" name="email" id="email" placeholder="Informe seu email">
+                    <div class="tipo-usuario">
+                        <h3>Tipo de usuário</h3>
+                        <div class="option-user">
+                            <div>
+                                <input type="radio" value="investidor" name="tipo-user" id="invest">
+                                <label for="invest">Investidor</label>
+                            </div>
+                            <div>
+                                <input type="radio" value="desenvolvedor" name="tipo-user" id="dev">
+                                <label for="dev">Desenvolvedor</label>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" name="cadastrar" value="Cadastrar">
+                    <a href="login.php">Login</a>
                 </form>
             </div>
         </section>

@@ -26,7 +26,7 @@
       <div class="nav-bar">
         <img  id="btn-menu" src="images/btn-menu.svg" alt="butão de menu">
         <ul class="barra-menu">
-          <a href="public/html/landing-page.php"><li>Login/Cadastro</li></a>
+          <a href="public/html/login.php"><li>Login/Cadastro</li></a>
           <a href="#"><li>Perfil</li></a>
           <a href="#"><li>Sobre</li></a>
         </ul>
@@ -74,7 +74,7 @@
     <div class="area-menu">
       <ul class="lista-menu">
         <a href="index.html"><li>Home</li></a>
-        <a href="public/html/landing-page.php"><li>Login / Cadastro</li></a>
+        <a href="public/html/login.php"><li>Login / Cadastro</li></a>
         <a href="#"><li>Perfil</li></a>
         <a href="#"><li>Sobre</li></a>
       </ul>
