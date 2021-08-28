@@ -1,6 +1,5 @@
-<?php
-    require('../../php/crud-usuarios.php');
-?>
+<?php require('../../php/crud-usuarios.php');?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 

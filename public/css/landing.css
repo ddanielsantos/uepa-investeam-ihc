@@ -17,13 +17,7 @@
     color: var(--bg-primary);
 }
 
-/* body{
-    background-color: var(--bg-secondary);
-    color: var(--font-primary);
-} */
-
 section> *{
-    /* height: 1000px; */
     padding: 5em 3em 0em 3em;
     display: flex;
     flex-direction: column;
@@ -46,10 +40,6 @@ section > div.texts {
     font-size: 2.5em;
     text-align: left;
 }
-
-/* .texts-mobile > h2:last-child{
-    display: none;
-} */
 
 .texts-mobile{
     margin-top: 0;
@@ -83,7 +73,6 @@ input[type="submit"], a{
 a{
     border: none;
     text-decoration: underline;
-    /* margin-left: auto; */
 }
 
 input[type="submit"]:hover, a:hover{
@@ -153,11 +142,6 @@ input[type="submit"]:hover{
     .texts-mobile > * {
         display: none;
     }
-
-    /* .texts-mobile > h2:last-child{
-        display: block;
-        text-align: center;
-    } */
 
     #login-area{
         margin-top: 0;

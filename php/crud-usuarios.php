@@ -20,19 +20,27 @@ try {
       $stmt->bindValue(2, $password);
 
       # executa a consulta
-      $stmt->execute();
-      echo $stmt->rowCount();
+      $stmt->execute(); 
+
       # valida o usuario
       if ($stmt->rowCount() > 0) { // se encontrou algum registro
-        # cria uma sessão de logado
-        $_SESSION['loginok'] = 'login OK';
-        header('location: ../index.php');
+        $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        # testa se password e senha são identicos aos registros do db
+        if (($rs['username'] == $username) && ($rs['senha'] == $password)) {
+          $_SESSION['loginok'] = 'login OK';
+          header('location: ../index.php');
+        } else {
+          # cria uma sessão de erro para o login
+          $_SESSION['loginerr'] = 'Usuário e/ou senha inválidos!';
+          header('location: ../public/html/landing-page.php');  
+        }
+
       } else {
         # cria uma sessão de erro para o login
         $_SESSION['loginerr'] = 'Usuário e/ou senha inválidos!';
         header('location: ../public/html/landing-page.php');
       }
-
     } else {
       # grava uma sessão de erro
       $_SESSION['loginerr'] = "Preencha todos os campos corretamente";
@@ -41,6 +49,7 @@ try {
       header('location: ../public/html/landing-page.php');
     }
   }
+
 } catch (PDOException $e) {
   echo ".....=Code: " . $e->getCode() . "  ......=Mensagem: " . $e->getMessage();
 }
