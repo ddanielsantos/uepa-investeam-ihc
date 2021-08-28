@@ -74,7 +74,7 @@
     <div class="area-menu">
       <ul class="lista-menu">
         <a href="index.html"><li>Home</li></a>
-        <a href="public/html/landing-page.html"><li>Login / Cadastro</li></a>
+        <a href="public/html/landing-page.php"><li>Login / Cadastro</li></a>
         <a href="#"><li>Perfil</li></a>
         <a href="#"><li>Sobre</li></a>
       </ul>

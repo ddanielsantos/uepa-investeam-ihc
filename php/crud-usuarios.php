@@ -56,7 +56,5 @@ try {
 
 /* 
   NOTES: 
-  - fazer as mensagens de erro na página de login
-  - Diferenciar se a senha foi cadastrada com letras "MAIÚSCULAS" ou "minúsculas"
   - Não esquecer de buscar as senhas com criptografia
 */

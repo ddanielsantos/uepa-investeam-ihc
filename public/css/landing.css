@@ -17,8 +17,12 @@
     color: var(--bg-primary);
 }
 
+body {
+    background: var(--bg-secondary);
+}
+
 section> *{
-    padding: 5em 3em 0em 3em;
+    padding: 2em 3em 0em 3em;
     display: flex;
     flex-direction: column;
 }
@@ -34,11 +38,13 @@ section > div.texts {
 .texts-mobile > h1, .texts > h1{
     font-size: 5em;
     text-decoration: underline;
+    color: var(--font-primary);
 }
 
 .texts-mobile > h2, .texts > h2 {
     font-size: 2.5em;
     text-align: left;
+    color: var(--font-primary);
 }
 
 .texts-mobile{
@@ -110,6 +116,7 @@ input[type="submit"]:hover{
     background-color: rgb(255, 255, 255);
     color: #e73838f6;
     border-radius: 1rem;
+    padding: 1.5rem 1rem;
 
     font-size: 17px;
     font-weight: 500;
