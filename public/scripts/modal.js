@@ -8,3 +8,19 @@ open.addEventListener("click", () => {
 close.addEventListener("click", () => {
   document.querySelector('.modal').style.width="0px"
 })
+
+/* Confirmar antes de saír da conta */
+const confirmExit = () => {
+  let confirm = document.querySelector('#confirm');
+  let cancel = document.querySelector('#cancel');
+
+  document.querySelector('.confirmLogout').classList.remove('hidden');
+
+  confirm.addEventListener("click", () => {
+    location.href="php/crud-usuarios.php?logout";
+  })
+
+  cancel.addEventListener("click", () => {
+    document.querySelector('.confirmLogout').classList.add('hidden');
+  })
+}

@@ -2,9 +2,6 @@
 # importação do arquivo de conexão com o banco
 require('conection.php');
 
-# inicia uma sessão
-session_start();
-
 try {
 
   # CREATE -> Criar conta do usuário
@@ -110,6 +107,13 @@ try {
       # redireciona para página de login
       header('location: ../public/html/login.php');
     }
+  }
+
+  # Para fazer logout da conta...
+  if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header('location: ../index.php');
   }
 
 } catch (PDOException $e) {

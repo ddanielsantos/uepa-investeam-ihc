@@ -61,3 +61,67 @@
   color: var(--bg-primary);
   font-weight: 700;
 }
+
+/* ===== JANELA DE CONFIRMAÇÃO DO LOGOUT ===== */
+.confirmLogout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.confirmLogout .box-message {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--font-primary);
+  width: min(25rem, 100%);
+  margin: 0 2rem;
+  padding: 1rem;
+  border-radius: .9rem;
+  color: var(--bg-primary);
+}
+
+.confirmLogout .box-message .buttons-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: .7rem;
+}
+
+.confirmLogout .box-message .buttons-action button {
+  padding: .5rem;
+  font-size: 15px;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin: 0 .5rem;
+}
+
+.confirmLogout .box-message .buttons-action button:nth-child(1) {
+  background-color: var(--bg-secondary);
+  color: var(--font-primary);
+}
+
+.confirmLogout .box-message .buttons-action button:nth-child(1):hover {
+  background-color: var(--bg-primary);
+}
+
+.confirmLogout .box-message .buttons-action button:nth-child(2) {
+  background-color: #fff;
+  color: var(--bg-primary);
+}
+
+.confirmLogout .box-message .buttons-action button:nth-child(2):hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.hidden {
+  display: none;
+}

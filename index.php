@@ -1,3 +1,4 @@
+<?php require('php/conection.php') ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -18,7 +19,7 @@
 <body>
   <div class="container">
     <header class="cabecalho">
-      <a href="index.html"><img class="logo" src="images/logo.svg" alt="logo investeam"></a>
+      <a href="index.php"><img class="logo" src="images/logo.svg" alt="logo investeam"></a>
       <form class="busca-projetos" action="" method="POST">
         <input type="text" name="buscar-projetos" placeholder="Buscar Projetos">
         <button name="buscar"></button>
@@ -26,9 +27,14 @@
       <div class="nav-bar">
         <img  id="btn-menu" src="images/btn-menu.svg" alt="butão de menu">
         <ul class="barra-menu">
-          <a href="public/html/login.php"><li>Login/Cadastro</li></a>
-          <a href="#"><li>Perfil</li></a>
-          <a href="#"><li>Sobre</li></a>
+          <?php if (!isset($_SESSION['loginok'])) { ?>
+            <a href="public/html/login.php"><li>Login/Cadastro</li></a>
+          <?php } ?>
+            <a href="#"><li>Sobre</li></a>
+          <?php if (isset($_SESSION['loginok'])) { ?> 
+            <a href="#"><li>Perfil</li></a>
+            <a onclick="return confirmExit()"><li>Sair</li></a> 
+          <?php } ?>
         </ul>
       </div>
     </header>
@@ -69,15 +75,30 @@
   </div>
   <div class="modal">
     <div class="area-button">
-      <img id="btn-close" src="images/btn-close.svg" alt="">
+      <img id="btn-close" src="images/btn-close.svg" alt="fechar">
     </div>
     <div class="area-menu">
       <ul class="lista-menu">
-        <a href="index.html"><li>Home</li></a>
-        <a href="public/html/login.php"><li>Login / Cadastro</li></a>
-        <a href="#"><li>Perfil</li></a>
-        <a href="#"><li>Sobre</li></a>
+        <a href="index.php"><li>Home</li></a>
+        <?php if (!isset($_SESSION['loginok'])) { ?>
+          <a href="public/html/login.php"><li>Login / Cadastro</li></a>
+          <?php } ?>
+          <a href="#"><li>Sobre</li></a>
+          <?php if (isset($_SESSION['loginok'])) { ?> 
+            <a href="#"><li>Perfil</li></a>
+            <a onclick="return confirmExit()"><li>Sair</li></a>
+          <?php } ?>
       </ul>
+    </div>
+
+    <div class="confirmLogout hidden">
+      <div class="box-message">
+        <h3>Deseja sair da conta?</h3>
+        <div class="buttons-action">
+          <button id="confirm">Confirmar</button>
+          <button id="cancel">Cancelar</button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="public/scripts/modal.js"></script>

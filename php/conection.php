@@ -1,4 +1,8 @@
 <?php
+
+# inicia uma sessão
+session_start();
+
 try {
   # estabelecendo a conexão com o banco de dados
   $conexao = new PDO("mysql:host=localhost;dbname=investeam","root","");
