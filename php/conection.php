@@ -9,7 +9,7 @@ try {
 
   # Tabela de usuários
   $tbusuarios = '
-    CREATE TABLE usuarios (
+    CREATE TABLE IF NOT EXISTS usuarios (
       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
       username VARCHAR(15) NOT NULL,
