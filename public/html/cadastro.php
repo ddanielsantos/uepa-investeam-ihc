@@ -40,13 +40,13 @@
                         </div>
                     <?php } ?>
 
-                    <?php if (isset($_SESSION['loginok'])) { ?>
+                    <?php if (isset($_SESSION['created'])) { ?>
                         <div class="msg-ok">
                             <?php 
                                 # exibe a mensagem da sessão
-                                echo $_SESSION['loginok'];
+                                echo $_SESSION['created'];
                                 # deleta a sessão
-                                unset($_SESSION['loginok']);
+                                unset($_SESSION['created']);
                             ?>
                         </div>
                     <?php } ?>

@@ -20,33 +20,41 @@ try {
     if ($name && $username && $passRepeat && $password && $email && $tipo) {
       if ($password == $passRepeat) {
         # consulta sql
-        $stmt = $conexao->prepare("SELECT * FROM usuarios");
-        
+        $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE username = ?");
+        $stmt->bindValue(1, $username);
+
         #executa a consulta
         $stmt->execute();
-        $rs = $stmt->fetch(PDO::FETCH_ASSOC);
-        # valida nome de usuairo no banco de dados
-        if ($rs['username'] == $username) {
+
+        if ($stmt->rowCount() == 0) {
+          $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+          # valida nome de usuairo no banco de dados
+          if ($rs['username'] == $username) {
+            # grava uma nova sessão de erro
+            $_SESSION['loginerr'] = "Esse usuário já existe!";
+            header('location: ../public/html/cadastro.php');    
+          } else {
+            # caso não encontre nenhum registro -> cria nova conta
+            $stmt = $conexao->prepare("INSERT INTO usuarios (nome, username, senha, email, tipo, status) VALUES (?,?,?,?,?,'inativo')");
+            
+            # atribui os dados vindo do input direto na consulta
+            $stmt->bindValue(1, $name);
+            $stmt->bindValue(2, $username);
+            $stmt->bindValue(3, md5($password));
+            $stmt->bindValue(4, $email);
+            $stmt->bindValue(5, $tipo);
+  
+            # executa a query
+            $stmt->execute();
+  
+            # grava uma nova sessão de erro
+            $_SESSION['created'] = "Conta criada com sucesso!";
+            header('location: ../public/html/cadastro.php');  
+          }
+        } else {
           # grava uma nova sessão de erro
           $_SESSION['loginerr'] = "Esse usuário já existe!";
-          header('location: ../public/html/cadastro.php');    
-        } else {
-          # caso não encontre nenhum registro -> cria nova conta
-          $stmt = $conexao->prepare("INSERT INTO usuarios (nome, username, senha, email, tipo, status) VALUES (?,?,?,?,?,'inativo')");
-          
-          # atribui os dados vindo do input direto na consulta
-          $stmt->bindValue(1, $name);
-          $stmt->bindValue(2, $username);
-          $stmt->bindValue(3, $password);
-          $stmt->bindValue(4, $email);
-          $stmt->bindValue(5, $tipo);
-
-          # executa a query
-          $stmt->execute();
-
-          # grava uma nova sessão de erro
-          $_SESSION['loginok'] = "Conta criada com sucesso!";
-          header('location: ../public/html/cadastro.php');  
+          header('location: ../public/html/cadastro.php'); 
         }
       } else {
         # grava uma nova sessão de erro
@@ -71,18 +79,24 @@ try {
       # prepara uma consulta sql
       $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE username = ? AND senha = ?");
       $stmt->bindValue(1, $username);
-      $stmt->bindValue(2, $password);
+      $stmt->bindValue(2, md5($password));
 
       # executa a consulta
       $stmt->execute(); 
 
-      # percorre os registro do banco
-      $rs = $stmt->fetch(PDO::FETCH_ASSOC);
-      # valida o usuario
-      # testa se password e senha são identicos aos registros do db
-      if (($rs['username'] == $username) && ($rs['senha'] == $password)) {
-        $_SESSION['loginok'] = 'login OK';
-        header('location: ../index.php');
+      if ($stmt->rowCount() > 0) {
+        # percorre os registro do banco
+        $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+        # valida o usuario
+        # testa se password e senha são identicos aos registros do db
+        if (($rs['username'] == $username) && ($rs['senha'] == md5($password))) {
+          $_SESSION['loginok'] = 'login OK';
+          header('location: ../index.php');
+        } else {
+          # cria uma sessão de erro para o login
+          $_SESSION['loginerr'] = 'Usuário e/ou senha inválidos!';
+          header('location: ../public/html/login.php');  
+        }
       } else {
         # cria uma sessão de erro para o login
         $_SESSION['loginerr'] = 'Usuário e/ou senha inválidos!';
@@ -104,5 +118,5 @@ try {
 
 /* 
   NOTES: 
-  - Não esquecer de buscar as senhas com criptografia
+  - Ajustar as lógicas de permissões da página principal
 */
