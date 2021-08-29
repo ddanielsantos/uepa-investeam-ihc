@@ -110,6 +110,22 @@ main {
   height: 154px;
   border-radius: 9px;
   background: var(--bg-primary);
+  padding: .5rem;
+}
+
+.area-top-projetos .top-projetos .list-top-projetos ul {
+  display: grid;
+  grid-template-columns: 60% 40%;
+
+  font-size: 18px;
+  font-weight: 600;
+  background: var(--bg-secondary);
+  color: var(--font-primary);
+  padding: .2rem .5rem;
+
+  list-style: none;
+  border: 2px solid #fff;
+  border-radius: .5rem;
 }
 
 /* projetos buscados */
@@ -185,6 +201,8 @@ main {
 .back-search img {
   width: 40px;
 }
+
+
 
 @media screen and (min-width: 869px) {
   main {

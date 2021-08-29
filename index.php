@@ -81,17 +81,23 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <aside class="area-top-projetos">
         <h2>Top projetos</h2>
         <div class="top-projetos">
-          <?php for ($i=0; $i < count($rs); $i++) { ?>
-            <?php 
-              // for ($j=$i; $j < count($rs); $i++) {
-              //   if ($rs[$i]['estrelas'] < $rs[$j]['estrelas']) {
-                  
-              //   }
-              // }
-              echo $rs[$i]['estrelas']; 
-            ?>
-            <!-- <pre>
-            </pre> -->
+          <?php 
+            $topEstrelas=0;
+            for ($i=0; $i < count($rs); $i++) {
+              if ($topEstrelas < $rs[$i]['estrelas']) {
+                $topEstrelas = $rs[$i]['estrelas'];
+              }
+            }
+          ?>
+          <?php for ($i = 0; $i < count($rs); $i++) { ?>
+            <?php if($topEstrelas == $rs[$i]['estrelas']) { ?>
+              <div class="list-top-projetos">
+                <ul>
+                  <li>Nome: <?php echo $rs[$i]['nomeProjeto']; ?></li>
+                  <li>Estrelas: <?php echo $rs[$i]['estrelas']; ?></li>
+                </ul>
+              </div> 
+            <?php } ?>
           <?php } ?>
         </div>
       </aside>
