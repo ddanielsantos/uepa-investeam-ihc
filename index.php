@@ -5,17 +5,21 @@ $stmt = $conexao->prepare("SELECT * FROM projetos");
 $stmt->execute();
 $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if (isset($_POST['buscar'])) {
-  $busca = filter_input(INPUT_POST, 'buscar-projetos', FILTER_SANITIZE_STRING);
+// if (isset($_POST['buscar'])) {
+//   $busca = filter_input(INPUT_POST, 'buscar-projetos', FILTER_SANITIZE_STRING);
 
-  if ($busca) {
-    $stmt = $conexao->prepare("SELECT * FROM projetos WHERE nomeProjeto = ?");
-    $stmt->bindValue(1, $busca);
-    $stmt->execute();
-  } else {
-    
-  }
-}
+//   if ($busca) {
+//     $stmt = $conexao->prepare("SELECT * FROM projetos WHERE nomeProjeto = ?");
+//     $stmt->bindValue(1, $busca);
+//     $stmt->execute();
+
+//     if ($stmt->rowCount() > 0) {
+//       $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//     }
+//   } else {
+//     $_SESSION['error'] = "Informe os parametros de busca corretamente!";    
+//   } 
+// }
 
 // function topCinco($registros)
 // {
@@ -92,26 +96,70 @@ if (isset($_POST['buscar'])) {
         </div>
       </aside>
       <section class="exibe-projetos">
-        <?php if ($rs) { ?>
-          <?php for ($i=0; $i < 4; $i++) { ?>
-            <div class="projetos">
-              <div class="nome-projeto"><?php echo $rs[$i]['nomeProjeto']; ?></div>
-              <div class="descricao">
-                <ul>
-                  <li>Desenvolvedor: <?php echo $rs[$i]['dev']; ?></li>
-                  <li>Status: <?php echo $rs[$i]['status']; ?></li>
-                  <li>Postado: <?php echo $rs[$i]['dataCriacao']; ?></li>
-                  <li>Estrelas: <?php echo $rs[$i]['estrelas']; ?></li>
-                </ul>
-                <a href="#"><button>Acessar</button></a>
-              </div>
+        <?php 
+          if (isset($_POST['buscar'])) {
+            $busca = filter_input(INPUT_POST, 'buscar-projetos', FILTER_SANITIZE_STRING);
+          
+            if ($busca) {
+              $stmt = $conexao->prepare("SELECT * FROM projetos WHERE nomeProjeto = ?");
+              $stmt->bindValue(1, $busca);
+              $stmt->execute();
+          
+              if ($stmt->rowCount() > 0) {
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        ?>
+          <!-- RESULTADO DA BUSCA -->
+          <a href="index.php" class="back-search">
+            <img src="images/back.svg" alt="voltar da busca">
+          </a>
+          <div class="projetos">
+            <div class="nome-projeto"><?php echo $result['nomeProjeto']; ?></div>
+            <div class="descricao">
+              <ul>
+                <li>Desenvolvedor: <?php echo $result['dev']; ?></li>
+                <li>Status: <?php echo $result['status']; ?></li>
+                <li>Postado: <?php echo $result['dataCriacao']; ?></li>
+                <li>Estrelas: <?php echo $result['estrelas']; ?></li>
+              </ul>
+              <a href="#"><button>Acessar</button></a>
             </div>
-          <?php } ?>
+          </div>
         <?php } else { ?>
+          <!-- "NADA ENCONTRADO..." -->
+          <a href="index.php" class="back-search">
+            <img src="images/back.svg" alt="voltar da busca">
+          </a>
           <div class="notFound">
             <p>Nada foi encontrado!</p>
           </div>
-        <?php }?>
+        <?php }
+            } else {
+              $_SESSION['error'] = "Informe os parametros de busca corretamente!";    
+            } 
+          } else { ?>
+            <!-- "PAIGINA INICIAL" -->
+            <?php if ($rs) { ?>
+              <?php for ($i=0; $i < 4; $i++) { ?>
+                <div class="projetos">
+                  <div class="nome-projeto"><?php echo $rs[$i]['nomeProjeto']; ?></div>
+                  <div class="descricao">
+                    <ul>
+                      <li>Desenvolvedor: <?php echo $rs[$i]['dev']; ?></li>
+                      <li>Status: <?php echo $rs[$i]['status']; ?></li>
+                      <li>Postado: <?php echo $rs[$i]['dataCriacao']; ?></li>
+                      <li>Estrelas: <?php echo $rs[$i]['estrelas']; ?></li>
+                    </ul>
+                    <a href="#"><button>Acessar</button></a>
+                  </div>
+                </div>
+              <?php } ?>
+            <?php } else { ?>
+              <div class="notFound">
+                <p>Nada foi encontrado!</p>
+              </div>
+            <?php }?>
+          <?php }?>
+
       </section>
     </main>
   </div>

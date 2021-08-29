@@ -13,6 +13,14 @@ html {
   --font-primary: #ffffff;
 }
 
+body::-webkit-scrollbar {
+  width: .4rem
+} 
+
+body::-webkit-scrollbar-thumb {   
+background-color: var(--font-primary);   
+}
+
 /* HEADER */
 .container .cabecalho {
   display: flex;
@@ -163,14 +171,19 @@ main {
 
   background: url('../../images/aviso.svg') no-repeat;
   width: 100%;
-  height: 170px;
+  height: 180px;
   background-position: center;
+  background-position-y: bottom;
 }
 
 .notFound p {
   font-size: 24px;
   color: var(--font-primary);
-  margin-bottom: .7rem;
+  margin-bottom: 3rem;
+}
+
+.back-search img {
+  width: 40px;
 }
 
 @media screen and (min-width: 869px) {
