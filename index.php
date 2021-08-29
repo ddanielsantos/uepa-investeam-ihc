@@ -1,4 +1,39 @@
-<?php require('php/conection.php') ?>
+<?php require('php/conection.php');
+
+# Consulta os projetos
+$stmt = $conexao->prepare("SELECT * FROM projetos");
+$stmt->execute();
+$rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_POST['buscar'])) {
+  $busca = filter_input(INPUT_POST, 'buscar-projetos', FILTER_SANITIZE_STRING);
+
+  if ($busca) {
+    $stmt = $conexao->prepare("SELECT * FROM projetos WHERE nomeProjeto = ?");
+    $stmt->bindValue(1, $busca);
+    $stmt->execute();
+  } else {
+    
+  }
+}
+
+// function topCinco($registros)
+// {
+//   for($i = 0; $i < count($registros); $i++)
+//   {
+//      for($j = 0; $j < count($registros) - 1; $j++)
+//      {
+//        if($registros[$j] > $registros[$j + 1])
+//        {
+//          $aux = $registros[$j];
+//          $registros[$j] = $registros[$j + 1];
+//          $registros[$j + 1] = $aux;
+//        }
+//      }
+//   }
+// }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,34 +77,41 @@
       <aside class="area-top-projetos">
         <h2>Top projetos</h2>
         <div class="top-projetos">
+          <?php for ($i=0; $i < count($rs); $i++) { ?>
+            <?php 
+              // for ($j=$i; $j < count($rs); $i++) {
+              //   if ($rs[$i]['estrelas'] < $rs[$j]['estrelas']) {
+                  
+              //   }
+              // }
+              echo $rs[$i]['estrelas']; 
+            ?>
+            <!-- <pre>
+            </pre> -->
+          <?php } ?>
         </div>
       </aside>
       <section class="exibe-projetos">
-        <div class="projetos">
-          <div class="nome-projeto">Jogo Teste 1</div>
-          <div class="descricao">
-            <ul>
-              <li>Desenvolvedor: Fulano Tec</li>
-              <li>Status: Não Iniciado</li>
-              <li>Data de criação: 24/08/2021</li>
-              <li>Estrelas: 60</li>
-            </ul>
-            <a href="#"><button>Acessar</button></a>
+        <?php if ($rs) { ?>
+          <?php for ($i=0; $i < 4; $i++) { ?>
+            <div class="projetos">
+              <div class="nome-projeto"><?php echo $rs[$i]['nomeProjeto']; ?></div>
+              <div class="descricao">
+                <ul>
+                  <li>Desenvolvedor: <?php echo $rs[$i]['dev']; ?></li>
+                  <li>Status: <?php echo $rs[$i]['status']; ?></li>
+                  <li>Postado: <?php echo $rs[$i]['dataCriacao']; ?></li>
+                  <li>Estrelas: <?php echo $rs[$i]['estrelas']; ?></li>
+                </ul>
+                <a href="#"><button>Acessar</button></a>
+              </div>
+            </div>
+          <?php } ?>
+        <?php } else { ?>
+          <div class="notFound">
+            <p>Nada foi encontrado!</p>
           </div>
-        </div>
-        <div class="projetos">
-          <div class="nome-projeto">Jogo Teste 2</div>
-          <div class="descricao">
-            <ul>
-              <li>Nome: Novo jogo</li>
-              <li>Desenvolvedor: Ciclano games</li>
-              <li>Status: Em desenvolvimento</li>
-              <li>Data de criação: 16/05/2021</li>
-              <li>Estrelas: 100</li>
-            </ul>
-            <a href="#"><button>Acessar</button></a>
-          </div>
-        </div>
+        <?php }?>
       </section>
     </main>
   </div>
@@ -104,3 +146,15 @@
   <script src="public/scripts/modal.js"></script>
 </body>
 </html>
+
+<!-- 
+  --- ANOTAÇÔES --- 
+  # Criar o sistema de busca;
+  # Ajustar para mostrar uma página
+    vazia, caso não encontre registro
+    no banco de dados;
+  # Mostrar um extenção com o nome de 
+    usuário quando criclar em perfil;
+  # Tentar mostrar cinco projetos que 
+    mais receberam estrelas;
+-->

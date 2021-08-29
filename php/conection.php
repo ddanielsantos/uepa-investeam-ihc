@@ -25,7 +25,21 @@ try {
     )
   ';
 
+  # Tabela de projetos
+  $tbprojetos = '
+    CREATE TABLE IF NOT EXISTS projetos (
+      codigo INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      dev VARCHAR(50) NOT NULL,
+      nomeProjeto VARCHAR(32) NOT NULL,
+      status VARCHAR(25) NOT NULL,
+      dataCriacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      estrelas INT
+    )
+  ';
+  
+  # Executa a criação da tabela
   $conexao->exec($tbusuarios);
+  $conexao->exec($tbprojetos);
 } catch (PDOException $e) {
   echo "Code: " . $e->getCode() . "...Message: " . $e->getMessage();
 }

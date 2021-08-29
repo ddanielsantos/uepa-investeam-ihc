@@ -69,6 +69,7 @@ html {
   color: var(--font-primary);
   font-weight: 700;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .container .cabecalho .nav-bar li:hover {
@@ -116,7 +117,7 @@ main {
 
   border: 2px solid #fff;
   border-radius: .5rem 0 .5rem 0;
-  margin: .5rem 0;
+  margin: 1.5rem 0;
   padding: .5rem;
 }
 
@@ -153,6 +154,23 @@ main {
 
 .container .exibe-projetos .projetos .descricao a button:hover {
   background-color: rgba(255, 255, 255, 0.795);
+}
+
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background: url('../../images/aviso.svg') no-repeat;
+  width: 100%;
+  height: 170px;
+  background-position: center;
+}
+
+.notFound p {
+  font-size: 24px;
+  color: var(--font-primary);
+  margin-bottom: .7rem;
 }
 
 @media screen and (min-width: 869px) {

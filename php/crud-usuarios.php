@@ -119,8 +119,3 @@ try {
 } catch (PDOException $e) {
   echo ".....=Code: " . $e->getCode() . "  ......=Mensagem: " . $e->getMessage();
 }
-
-/* 
-  NOTES: 
-  - Ajustar as lógicas de permissões da página principal
-*/
