@@ -15,7 +15,7 @@ try {
     $db["pass"],
     ltrim($db["path"], "/")
 ));
-  // $conexao = new PDO("pgsql:host=50.17.255.244;dbname=d997vi5td051t6","rfobtcvtichaaw","ba92a9958dbc4681adbc369c57bc712edef620b9eb96959368594a8927aa6ba0");
+  
 
   # Tabela de usuários
   $tbusuarios = '
