@@ -5,7 +5,7 @@ session_start();
 
 try {
   # estabelecendo a conexão com o banco de dados
-  $conexao = new PDO("mysql:host=localhost;dbname=investeam","root","");
+  $conexao = new PDO("pgsql:host=ec2-50-17-255-244.compute-1.amazonaws.com;dbname=d997vi5td051t6","rfobtcvtichaaw","ba92a9958dbc4681adbc369c57bc712edef620b9eb96959368594a8927aa6ba0");
 
   # Tabela de usuários
   $tbusuarios = '
