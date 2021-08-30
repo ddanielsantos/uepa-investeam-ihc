@@ -38,7 +38,7 @@ try {
   # Tabela de projetos
   $tbprojetos = '
     CREATE TABLE IF NOT EXISTS projetos (
-      codigo INT NOT NULL SERIAL PRIMARY KEY,
+      codigo SERIAL NOT NULL PRIMARY KEY,
       dev VARCHAR(50) NOT NULL,
       nomeProjeto VARCHAR(32) NOT NULL,
       status VARCHAR(25) NOT NULL,
