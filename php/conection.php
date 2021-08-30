@@ -20,7 +20,7 @@ try {
   # Tabela de usuários
   $tbusuarios = '
     CREATE TABLE IF NOT EXISTS usuarios (
-      id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      id INT NOT NULL SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
       username VARCHAR(15) NOT NULL,
       senha VARCHAR(32) NOT NULL,
@@ -38,7 +38,7 @@ try {
   # Tabela de projetos
   $tbprojetos = '
     CREATE TABLE IF NOT EXISTS projetos (
-      codigo INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      codigo INT NOT NULL SERIAL PRIMARY KEY,
       dev VARCHAR(50) NOT NULL,
       nomeProjeto VARCHAR(32) NOT NULL,
       status VARCHAR(25) NOT NULL,
