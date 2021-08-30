@@ -269,6 +269,7 @@ main {
     display:block;
     width:150px;
     background: var(--bg-primary);
+    text-align: center;
   }
   
   .barra-menu .dropdown ul {

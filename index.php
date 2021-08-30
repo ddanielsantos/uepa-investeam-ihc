@@ -17,6 +17,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- CSS -->
   <link rel="stylesheet" href="public/css/main.css">
   <link rel="stylesheet" href="public/css/modal.css">
+  <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
