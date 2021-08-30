@@ -20,7 +20,7 @@ try {
   # Tabela de usuários
   $tbusuarios = '
     CREATE TABLE IF NOT EXISTS usuarios (
-      id INT NOT NULL SERIAL PRIMARY KEY,
+      id SERIAL NOT NULL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
       username VARCHAR(15) NOT NULL,
       senha VARCHAR(32) NOT NULL,
