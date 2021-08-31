@@ -87,7 +87,7 @@ try {
         # valida o usuario
         # testa se password e senha são identicos aos registros do db
         if (($rs['username'] == $username) && ($rs['senha'] == md5($password))) {
-          $_SESSION['loginok'] = 'login OK';
+          $_SESSION['loginok'] = $username;
           header('location: ../index.php');
         } else {
           # cria uma sessão de erro para o login

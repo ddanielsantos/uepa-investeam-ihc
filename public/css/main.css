@@ -85,7 +85,7 @@ background-color: var(--font-primary);
   color: var(--bg-primary);
 }
 
-/* CONTAINER */
+/* MAIN */
 body {
   background: var(--bg-secondary);
 }
@@ -235,9 +235,52 @@ main {
 
   .container .cabecalho .nav-bar .barra-menu li a {
     color: #fff;
-    margin: 10px;
     font-size: 25px;
     text-align: center;
+  }
+
+  .container .cabecalho .nav-bar .barra-menu li {
+    position: relative;
+  }
+
+  /* Dropdown em perfil do menu */
+  .barra-menu .dropdown ul {
+    position:absolute;
+    top:45px;
+    left:-30px;
+    background: var(--bg-primary);
+    display:none;
+  }
+
+  .barra-menu .dropdown ul {
+    position:absolute;
+    top:50px;
+    left:-45px;
+    background: var(--bg-primary);
+    display:none;
+  }
+
+  .barra-menu .dropdown:hover ul, 
+  .barra-menu .dropdown.over ul{
+    display:block;
+  }
+
+  .barra-menu .dropdown ul li {
+    display:block;
+    width:150px;
+    background: var(--bg-primary);
+    text-align: center;
+  }
+  
+  .barra-menu .dropdown ul {
+    background: var(--bg-secondary);
+    border: 3px solid var(--font-primary);
+    border-radius: .9rem;
+    padding: .5rem;
+  }
+
+  .container .cabecalho .nav-bar .barra-menu li:hover a {
+    color: var(--bg-primary);
   }
 
   .container main .exibe-projetos {

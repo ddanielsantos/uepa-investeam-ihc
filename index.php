@@ -5,38 +5,6 @@ $stmt = $conexao->prepare("SELECT * FROM projetos");
 $stmt->execute();
 $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// if (isset($_POST['buscar'])) {
-//   $busca = filter_input(INPUT_POST, 'buscar-projetos', FILTER_SANITIZE_STRING);
-
-//   if ($busca) {
-//     $stmt = $conexao->prepare("SELECT * FROM projetos WHERE nomeProjeto = ?");
-//     $stmt->bindValue(1, $busca);
-//     $stmt->execute();
-
-//     if ($stmt->rowCount() > 0) {
-//       $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//     }
-//   } else {
-//     $_SESSION['error'] = "Informe os parametros de busca corretamente!";    
-//   } 
-// }
-
-// function topCinco($registros)
-// {
-//   for($i = 0; $i < count($registros); $i++)
-//   {
-//      for($j = 0; $j < count($registros) - 1; $j++)
-//      {
-//        if($registros[$j] > $registros[$j + 1])
-//        {
-//          $aux = $registros[$j];
-//          $registros[$j] = $registros[$j + 1];
-//          $registros[$j + 1] = $aux;
-//        }
-//      }
-//   }
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -49,6 +17,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- CSS -->
   <link rel="stylesheet" href="public/css/main.css">
   <link rel="stylesheet" href="public/css/modal.css">
+  <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +40,15 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <?php } ?>
             <a href="#"><li>Sobre</li></a>
           <?php if (isset($_SESSION['loginok'])) { ?> 
-            <a href="#"><li>Perfil</li></a>
+            <a href="#">
+              <li class="dropdown">
+                <a href="#">Perfil</a>
+                <ul class="dropdown-list">
+                  <li><?php echo $_SESSION['loginok']; ?></li>
+                  <a href="#"><li>Acessar</li></a>
+                </ul>
+              </li>
+            </a>  
             <a onclick="return confirmExit()"><li>Sair</li></a> 
           <?php } ?>
         </ul>
@@ -203,12 +180,6 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- 
   --- ANOTAÇÔES --- 
-  # Criar o sistema de busca;
-  # Ajustar para mostrar uma página
-    vazia, caso não encontre registro
-    no banco de dados;
   # Mostrar um extenção com o nome de 
     usuário quando criclar em perfil;
-  # Tentar mostrar cinco projetos que 
-    mais receberam estrelas;
 -->
