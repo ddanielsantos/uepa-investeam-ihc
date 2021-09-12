@@ -57,13 +57,53 @@ section > div.texts {
   flex-wrap: wrap;
 }
 
+#login-area .pagina-principal,
+#login-area .redefinir-senha {
+  padding: 1.3rem;
+  text-align: center;
+}
+
+#login-area .pagina-principal a {
+  text-decoration: none;
+  font-size: .8em;
+  font-weight: 500;
+  letter-spacing: .3em;
+  cursor: pointer;
+}
+
+#login-area .pagina-principal a:hover {
+  padding: .3rem;
+}
+
+#login-area .redefinir-senha a {
+  text-decoration: none;
+  font-size: .8em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#login-area .redefinir-senha a:hover {
+  background: var(--bg-primary);
+  color: #ddd;
+}
+
+#login-area form .obrigatorio {
+  color: rgba(230, 217, 36, 0.932);
+  font-size: .8em;
+  margin-left: 1rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 form > input, a{
   width: 100%;
   padding: 1em;
   background-color: #00000000;
   border: var(--font-primary) 3px solid;
   border-radius: 1em;
-  margin-top: 1em;
+  margin-bottom: 1em;
   color: var(--font-primary);
   font-size: 1em;
   font-weight: 700;

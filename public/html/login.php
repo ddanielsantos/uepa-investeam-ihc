@@ -47,15 +47,23 @@
                     <?php } ?>
                 </div>
                 <form action="../../php/crud-usuarios.php" method="POST">
-                    <input type="text" name="username" id="username" placeholder="Insira o seu username">
-                    <input type="password" name="password" id="password" placeholder="Insira a sua senha">
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="text" name="username" id="fields" placeholder="Insira o seu username">
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="password" name="password" id="fields" placeholder="Insira a sua senha">
                     <a href="cadastro.php">Cadastrar-se</a>
                     <input type="submit" name="login" value="Login">
                 </form>
+                <div class="pagina-principal">
+                    <a href="../../index.php">Página principal</a>
+                </div>
+                <div class="redefinir-senha">
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
             </div>
         </section>
     </main>
-
+    <script src="../scripts/main.js"></script>                         
 </body>
 
 </html>

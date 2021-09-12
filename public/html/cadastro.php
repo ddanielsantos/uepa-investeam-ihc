@@ -75,6 +75,9 @@
                     <input type="submit" name="cadastrar" value="Cadastrar">
                     <a href="login.php">Login</a>
                 </form>
+                <div class="pagina-principal">
+                    <a href="../../index.php">Página principal</a>
+                </div>
             </div>
         </section>
         <section>
