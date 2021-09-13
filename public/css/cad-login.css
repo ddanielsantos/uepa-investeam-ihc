@@ -23,7 +23,7 @@ body{
 }
 
 section> *{
-  padding: 1em 3em 0em 3em;
+  padding: .5em 3em 0em 3em;
   display: flex;
   flex-direction: column;
 }
@@ -99,11 +99,11 @@ section > div.texts {
 
 form > input, a{
   width: 100%;
-  padding: 1em;
+  padding: .9em;
   background-color: #00000000;
   border: var(--font-primary) 3px solid;
   border-radius: 1em;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   color: var(--font-primary);
   font-size: 1em;
   font-weight: 700;
@@ -160,6 +160,7 @@ input[type="submit"]:hover{
 /* ESTILIZAÇÃO DAS MENSAGENS */
 .msg-box {
   height: 3rem;
+  margin-bottom: .3em;
 }
 
 .msg-box .msg-error,
@@ -183,6 +184,34 @@ input[type="submit"]:hover{
 
 .msg-box .msg-ok {
   color: #259738f6;
+}
+
+.ajuda-autenticacao {
+  border: 3px solid #fff;
+  margin: 1.5em 0;
+  padding: .7em;
+  width: 480px;
+  border-radius: 1em 0;
+}
+
+.ajuda-autenticacao .usuario {
+  margin: 1rem 0;
+}
+
+.ajuda-autenticacao .usuario ul {
+  list-style: circle;
+  font-weight: 600;
+  margin-top: .6rem;
+  text-align: left;
+}
+
+.ajuda-autenticacao .usuario ul li {
+  font-weight: 400;
+  margin: 0 1.2rem;
+}
+
+.ajuda-autenticacao .dev {
+  margin: 1rem 0;
 }
 
 @media (min-width: 992px) {

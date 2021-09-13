@@ -25,6 +25,16 @@
             <div class="texts">
                 <h1>Login</h1>
                 <h2>Faça login e já comece a investir.</h2>
+
+                <div class="ajuda-autenticacao">
+                    <div class="usuario">
+                        <h4>Informações de login</h4>
+                        <p>Caso ja tenha criado sua conta gratuita, faça login com o usuario e senha cadastrado</p>
+                        <ul> Recomendações
+                            <li>Todos os campos são obrigatórios</li>
+                            <li>Para uma senha segura, escolha uma com pelo menos 8 caractes entre maiúculos e minúsculos</li>
+                        </ul>
+                    </div>
             </div>
         </section>
         <section>

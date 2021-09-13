@@ -19,7 +19,6 @@
 <body>
     <main>
         <div class="container">
-            
         </div>
         <section>
             <div class="texts-mobile">
@@ -54,16 +53,21 @@
                 </div>
 
                 <form action="../../php/crud-usuarios.php" method="POST">
-                    <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
-                    <input type="text" name="username" id="username" placeholder="Digite seu usuário">
-                    <input type="password" name="password" id="password" placeholder="Digite sua senha">                    
-                    <input type="password" name="password-repeat" id="password" placeholder="Digite sua senha novamente">                    
-                    <input type="email" name="email" id="email" placeholder="Informe seu email">
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="text" name="nome" id="fields" placeholder="Digite o seu nome">
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="text" name="username" id="fields" placeholder="Digite seu usuário">
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="password" name="password" id="fields" placeholder="Digite sua senha">                    
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="password" name="password-repeat" id="fields" placeholder="Digite sua senha novamente">                    
+                    <label class="obrigatorio hidden" id="field-msg">Campo Obrigatório</label>
+                    <input type="email" name="email" id="fields" placeholder="Informe seu email">
                     <div class="tipo-usuario">
                         <h3>Tipo de usuário</h3>
                         <div class="option-user">
                             <div>
-                                <input type="radio" value="investidor" name="tipo-user" id="invest">
+                                <input type="radio" value="investidor" name="tipo-user" id="invest" checked>
                                 <label for="invest">Investidor</label>
                             </div>
                             <div>
@@ -83,12 +87,37 @@
         <section>
             <div class="texts">
                 <h1>Cadastre-se</h1>                  
-                <h2>Crie sua conta e venha conhecer novos projetos.</h2>               
+                <h2>Crie sua conta e venha conhecer novos projetos.</h2>          
+                
+                <div class="ajuda-autenticacao">
+                    <div class="usuario">
+                        <h4>Investidor</h4>
+                        <p>Caso esteja procurando projetos de games para investir, então comece uma conta gratuita como um investidor</p>
+                        <ul> O que um investidor pode fazer?
+                            <li>Buscar projetos</li>
+                            <li>Consultar perfil do criador do projeto</li>
+                            <li>Entrar em contato com o desenvolvedor</li>
+                        </ul>
+                    </div>
+                    <div class="usuario">
+                        <h4>Desenvolvedor</h4>
+                        <p>
+                            Se voce é um criador de jogos com projetos em mentes mas não tem recurso finaceiro, então crie uma conta gratuita
+                            como um desenvolvedor e comece a publicar projetos.
+                        </p>
+                        <ul> O que um desenvolvedor pode fazer?
+                            <li>Criar novos projetos</li>
+                            <li>Publicar projetos</li>
+                            <li>Editar seus projetos publicados</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
+    <script src="../scripts/main.js"></script>
 </body>
 
 </html>
