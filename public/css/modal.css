@@ -125,3 +125,51 @@
 .hidden {
   display: none;
 }
+
+/* ====== JANELA (SOBRE A PLATAFORMA) ====== */
+.modal-about {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  padding: 0 1rem;
+}
+
+.modal-about .window {
+  background-color: rgb(255, 255, 255);
+  border-radius: .4rem;
+  padding: .6rem;
+  width: min(450px, 100%);
+  margin: auto;
+  
+  position: relative;
+  top: 25%;
+}
+
+.modal-about .window .content-about {
+  text-align: center;
+  color: var(--bg-secondary);
+}
+
+.modal-about .window .content-about p {
+  border: 2px solid var(--bg-secondary);
+  font-size: 1.1em;
+  color: rgb(56, 56, 56);
+  border-radius: .5rem;
+  padding: .3rem;
+}
+
+.modal-about .window .close-about {
+  text-align: center;
+  padding: .6rem 0;
+}
+
+.modal-about .window .close-about span {
+  background: var(--bg-secondary);
+  color: #fff;
+  padding: .4rem;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+

@@ -24,3 +24,22 @@ const confirmExit = () => {
     document.querySelector('.confirmLogout').classList.add('hidden');
   })
 }
+
+/* ===== ABRIR UMA JANELA "SOBRE" ==== */
+let openAbout = document.querySelector("#btn-sobre");
+let openAboutMobile = document.querySelector("#btn-sobre-mobile");
+let closeAbout = document.querySelector("#close-about");
+let modalAbout = document.querySelector(".modal-about");
+
+openAbout.onclick = function() {
+  modalAbout.classList.remove("hidden");
+}
+
+openAboutMobile.onclick = function() {
+  modalAbout.classList.remove("hidden");
+}
+
+closeAbout.onclick = function() {
+  modalAbout.classList.add("hidden");
+}
+

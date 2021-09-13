@@ -5,6 +5,11 @@ $stmt = $conexao->prepare("SELECT * FROM projetos");
 $stmt->execute();
 $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+# Consulta os usuarios
+$stmt2 = $conexao->prepare("SELECT * FROM usuarios");
+$stmt2->execute();
+$rs2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -38,8 +43,13 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <?php if (!isset($_SESSION['loginok'])) { ?>
             <a href="public/html/login.php"><li>Login/Cadastro</li></a>
           <?php } ?>
-            <a href="#"><li>Sobre</li></a>
+            <a href="#" id="btn-sobre"><li>Sobre</li></a>
           <?php if (isset($_SESSION['loginok'])) { ?> 
+            <?php for ($i=0; $i < 4; $i++) { ?>
+              <?php if ($rs2[$i]['tipo'] == "desenvolvedor" && $rs2[$i]["username"] == $_SESSION['loginok']) { ?>
+                <a href="#"><li>Projetos</li></a>
+              <?php } ?>
+            <?php } ?>
             <a href="#">
               <li class="dropdown">
                 <a href="#">Perfil</a>
@@ -156,7 +166,7 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php if (!isset($_SESSION['loginok'])) { ?>
           <a href="public/html/login.php"><li>Login / Cadastro</li></a>
           <?php } ?>
-          <a href="#"><li>Sobre</li></a>
+          <a href="#" id="btn-sobre-mobile"><li>Sobre</li></a>
           <?php if (isset($_SESSION['loginok'])) { ?> 
             <a href="#"><li>Perfil</li></a>
             <a onclick="return confirmExit()"><li>Sair</li></a>
@@ -171,6 +181,22 @@ $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <button id="confirm">Confirmar</button>
           <button id="cancel">Cancelar</button>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-about hidden">
+    <div class="window">
+      <div class="content-about">
+        <h2>Sobre a plataforma</h2>
+        <p> 
+          A plataforma tem como principal objetivo criar uma conexão entre 
+          investidores na área de games, que buscam investir em projetos 
+          promissores, e desenvolvedores autônonos com projetos que não 
+          avançam por falta de recurso financeiro.
+        </p>
+      </div>
+      <div class="close-about">
+        <span id="close-about">Fechar</span>
       </div>
     </div>
   </div>
